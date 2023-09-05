@@ -8,6 +8,7 @@ import LoginPage from './component/LoginPageComponent/LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './component/HomePageComponent/HomePage';
 import NavBar from './component/NavBar/NavBar';
+import SignUpPage from './component/SignUpPageComponent/SignUpPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
     <Routes>
       <Route path='/' element={<LoginPage />} />
       <Route path='/home' element={<HomePage />} />
+      <Route path='/signup' element={<SignUpPage />} />
     </Routes>
   </BrowserRouter>
 );

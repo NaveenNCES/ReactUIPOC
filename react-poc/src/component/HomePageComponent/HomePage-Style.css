@@ -5,8 +5,7 @@
 }
 
 .progress-circle {
-    display: flex;
-    height: 90vh;
+    display: inline-flex;
 }
 
 .item-align {
@@ -17,8 +16,9 @@
 .mark-list {
     display: inline-flex;
     align-items: center;
-    margin: 50px 0 50px 200px;
+    margin: 20px 0 20px 100px;
     width: 200px;
+    justify-content: center;
 }
 
 .progress-nav {
@@ -32,7 +32,7 @@
     align-items: end;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-top: 50px;
 }
 
 .api-details-align {
@@ -42,5 +42,32 @@
     align-items: left;
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
+}
+
+.display-details {
+    display: flex;
+}
+
+.display-flex{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    width: 75vw;
+}
+
+.link-style{
+    padding: 10px;
+    background-color: whitesmoke;
+    align-self: center;
+    border-radius: 10px;
+    color: brown;
+    margin: 10px;
+    font-size: medium;
+}
+
+.guide-link-align{
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
 }
