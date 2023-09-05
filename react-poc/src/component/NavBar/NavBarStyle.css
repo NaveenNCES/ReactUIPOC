@@ -1,0 +1,23 @@
+.nav-body{
+    background-color: brown;
+    margin: auto;
+    padding: 20px;
+}
+
+.nav-child-div{
+    color: white;
+}
+
+.nav-right-link{
+    position: absolute;
+    right: 0px;
+    width: 250px;
+    color: white;
+}
+
+.nav-link-log{
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}

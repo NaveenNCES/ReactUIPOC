@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from './component/LoginPageComponent/LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './component/HomePageComponent/HomePage';
+import NavBar from './component/NavBar/NavBar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

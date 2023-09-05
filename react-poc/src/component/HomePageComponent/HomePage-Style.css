@@ -3,3 +3,44 @@
     justify-content: center;
     margin-top: 25%;
 }
+
+.progress-circle {
+    display: flex;
+    height: 90vh;
+}
+
+.item-align {
+    display: flex;
+    flex-direction: column;
+}
+
+.mark-list {
+    display: inline-flex;
+    align-items: center;
+    margin: 50px 0 50px 200px;
+    width: 200px;
+}
+
+.progress-nav {
+    width: 100px;
+    margin-left: 10px;
+}
+
+.details-align {
+    font-size: x-large;
+    width: 50%;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.api-details-align {
+    font-size: x-large;
+    width: 50%;
+    margin-left: 10px;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
