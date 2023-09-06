@@ -1,0 +1,73 @@
+.body {
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+}
+
+.progress-circle {
+    display: inline-flex;
+}
+
+.item-align {
+    display: flex;
+    flex-direction: column;
+}
+
+.mark-list {
+    display: inline-flex;
+    align-items: center;
+    margin: 20px 0 20px 100px;
+    width: 200px;
+    justify-content: center;
+}
+
+.progress-nav {
+    width: 100px;
+    margin-left: 10px;
+}
+
+.details-align {
+    font-size: x-large;
+    width: 50%;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.api-details-align {
+    font-size: x-large;
+    width: 50%;
+    margin-left: 10px;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.display-details {
+    display: flex;
+}
+
+.display-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75vw;
+}
+
+.link-style{
+    padding: 10px;
+    background-color: whitesmoke;
+    align-self: center;
+    border-radius: 10px;
+    color: brown;
+    margin: 10px;
+    font-size: medium;
+}
+
+.guide-link-align{
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+}
