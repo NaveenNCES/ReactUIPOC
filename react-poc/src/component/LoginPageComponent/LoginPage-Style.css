@@ -96,3 +96,8 @@ input{
     border-radius: 5px;
     cursor: pointer;
 }
+
+.error{
+    color: red;
+    margin: 0px;
+}

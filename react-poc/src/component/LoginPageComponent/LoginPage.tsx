@@ -14,10 +14,20 @@ function LoginPage() {
         class: '',
         bloodGroup: '',
         address: ''
-    })
+    });
+
+    const [errorState, setErrorState] = useState({
+        rollNumber: '',
+        dateOfBirth: ''
+    });
 
     const getStudentDetail = async (event: any) => {
         event.preventDefault();
+        validation(student);
+        if (errorState.rollNumber || errorState.dateOfBirth) {
+            setErrorState({ ...errorState });
+            return;
+        }
         await axios.post(`${AppConstant.URL}${AppConstant.GetSelectedStudentDetails}`, student)
             .then((response: any) => uservalidation(response))
             .catch()
@@ -28,6 +38,16 @@ function LoginPage() {
             navigate('/home')
             console.log(response.data)
             sessionStorage.setItem("student", JSON.stringify(response.data))
+        }
+    }
+
+    const validation = (student: any) => {
+        if (!student.rollNumber) {
+            errorState.rollNumber = "Please enter rollNumber";
+        }
+
+        if (!student.dateOfBirth) {
+            errorState.dateOfBirth = "Please enter dateOfBirth";
         }
     }
 
@@ -45,12 +65,14 @@ function LoginPage() {
                     onChange={(e: any) => setStudentData({
                         ...student, rollNumber: e.target.value
                     })} />
+                <label className='error'>{errorState.rollNumber}</label>
 
                 <label className="form-label">Date Of Birth</label>
                 <input type="password" placeholder="DD/MM/YYYY" id="password"
                     onChange={(e: any) => setStudentData({
                         ...student, dateOfBirth: e.target.value
                     })} />
+                <label className='error'>{errorState.dateOfBirth}</label>
 
                 <button className='button' type='submit'>Log In</button>
                 <div>
