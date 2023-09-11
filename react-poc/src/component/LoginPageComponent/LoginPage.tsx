@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import './LoginPage-Style.css'
-import axios from 'axios'
-import { AppConstant } from '../constant/AppConstant'
+import { useState } from 'react';
+import './LoginPage-Style.css';
+import axios from 'axios';
+import { AppConstant } from '../constant/AppConstant';
 import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage() {
@@ -23,11 +23,11 @@ function LoginPage() {
 
     const getStudentDetail = async (event: any) => {
         event.preventDefault();
-        validation(student);
-        if (errorState.rollNumber || errorState.dateOfBirth) {
-            setErrorState({ ...errorState });
-            return;
-        }
+        // validation(student);
+        // if (errorState.rollNumber || errorState.dateOfBirth) {
+        //     setErrorState({ ...errorState });
+        //     return;
+        // }
         await axios.post(`${AppConstant.URL}${AppConstant.GetSelectedStudentDetails}`, student)
             .then((response: any) => uservalidation(response))
             .catch()
@@ -42,6 +42,7 @@ function LoginPage() {
     }
 
     const validation = (student: any) => {
+        /* Validation goes here */
         if (!student.rollNumber) {
             errorState.rollNumber = "Please enter rollNumber";
         }
@@ -51,8 +52,12 @@ function LoginPage() {
         }
     }
 
+    const navigateToSignUpPage = () => {
+        navigate('/signup')
+    }
+
     return (
-        <>
+        <div>
             <div className="background">
                 <div className="shape-login"></div>
                 <div className="shape-login"></div>
@@ -74,12 +79,12 @@ function LoginPage() {
                     })} />
                 <label className='error'>{errorState.dateOfBirth}</label>
 
-                <button className='button' type='submit'>Log In</button>
+                <button data-testid='userLogin' className='button' type='submit'>Log In</button>
                 <div>
-                    <label>Resgister new student <span><Link to={'/signup'}>Click here.</Link></span></label>
+                    <label>Resgister new student <span><label onClick={navigateToSignUpPage}>Click here.</label></span></label>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 
