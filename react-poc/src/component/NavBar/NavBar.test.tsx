@@ -9,7 +9,7 @@ jest.mock('react-router-dom', () => ({
     useNavigate: () => mockUsedNavigate,
 }));
 
-it('renders Home text', () => {
+test('renders Home text', () => {
     render(<NavBar />);
     const linkElement = screen.getByText(/Home/i);
     expect(linkElement).toBeInTheDocument();

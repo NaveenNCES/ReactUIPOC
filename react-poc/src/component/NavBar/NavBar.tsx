@@ -1,15 +1,23 @@
 import React from 'react'
 import './NavBarStyle.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function NavBar(props: any) {
     let isLoggedIn;
+    const navigate = useNavigate();
+    
+    const navigateToLoginPage = () =>{
+        navigate('/')
+    }
+
     if (props.studentName) {
-        isLoggedIn = <Link to={'/'} className='nav-link-log'>Logout</Link>;
+        isLoggedIn = <label className='nav-link-log' onClick={navigateToLoginPage}>Logout</label>;
     }
     else {
         isLoggedIn = 'Login'
     }
+
+    
 
     return (
         <div className='nav-body'>

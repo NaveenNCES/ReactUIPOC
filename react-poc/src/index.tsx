@@ -7,20 +7,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './component/HomePageComponent/HomePage';
 import SignUpPage from './component/SignUpPageComponent/SignUpPage';
 import React from 'react';
+import NavBar from './component/NavBar/NavBar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LoginPage />} />
         <Route path='/home' element={<HomePage />} />
         <Route path='/signup' element={<SignUpPage />} />
+        <Route path='/navBar' element={<NavBar />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -23,11 +23,11 @@ function LoginPage() {
 
     const getStudentDetail = async (event: any) => {
         event.preventDefault();
-        // validation(student);
-        // if (errorState.rollNumber || errorState.dateOfBirth) {
-        //     setErrorState({ ...errorState });
-        //     return;
-        // }
+        validation(student);
+        if (errorState.rollNumber || errorState.dateOfBirth) {
+            setErrorState({ ...errorState });
+            return;
+        }
         await axios.post(`${AppConstant.URL}${AppConstant.GetSelectedStudentDetails}`, student)
             .then((response: any) => uservalidation(response))
             .catch()
@@ -36,7 +36,7 @@ function LoginPage() {
     const uservalidation = async (response: any) => {
         if (response.data != null) {
             navigate('/home')
-            console.log(response.data)
+            //console.log(response.data)
             sessionStorage.setItem("student", JSON.stringify(response.data))
         }
     }
